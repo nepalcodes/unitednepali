@@ -1,0 +1,26 @@
+{
+  "name": "unitednepali",
+  "version": "1.0.0",
+  "description": ":wave: Welcome to United Nepali!",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start:server",
+    "start:server": "cd server && npm run start",
+    "cypress:open": "npx cypress open",
+    "test": "concurrently \"npm start\" \"npm run cypress:open\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nepalcodes/unitednepali.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nepalcodes/unitednepali/issues"
+  },
+  "homepage": "https://github.com/nepalcodes/unitednepali#readme",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "cypress": "^4.1.0"
+  }
+}
