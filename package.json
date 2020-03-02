@@ -4,6 +4,7 @@
   "description": ":wave: Welcome to United Nepali!",
   "main": "index.js",
   "scripts": {
+    "postinstall": "cd server && npm install",
     "start": "npm run start:server",
     "start:server": "cd server && npm run start",
     "cy:open": "npx cypress open",
