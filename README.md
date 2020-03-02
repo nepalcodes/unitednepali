@@ -1,4 +1,5 @@
 # United Nepali
+![End-to-end tests](https://github.com/nepalcodes/unitednepali/workflows/End-to-end%20tests/badge.svg?branch=master)
 
 :wave: Welcome to United Nepali!
 
