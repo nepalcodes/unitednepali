@@ -6,8 +6,10 @@
   "scripts": {
     "start": "npm run start:server",
     "start:server": "cd server && npm run start",
-    "cypress:open": "npx cypress open",
-    "test": "concurrently \"npm start\" \"npm run cypress:open\""
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run",
+    "test": "start-server-and-test start http://localhost:3000 cypress:open",
+    "test:ci": "start-server-and-test start http://localhost:3000 cy:run"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,7 @@
   },
   "homepage": "https://github.com/nepalcodes/unitednepali#readme",
   "devDependencies": {
-    "concurrently": "^5.1.0",
-    "cypress": "^4.1.0"
+    "cypress": "^4.1.0",
+    "start-server-and-test": "^1.10.8"
   }
 }
