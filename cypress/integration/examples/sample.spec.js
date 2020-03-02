@@ -3,9 +3,3 @@ describe('Truthy test', function() {
     expect(true).to.equal(true)
   })
 })
-
-describe('Falsy test', function() {
-  it('fails!', function() {
-    expect(true).to.equal(false)
-  })
-})
