@@ -4,13 +4,14 @@
   "description": ":wave: Welcome to United Nepali!",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd server && npm install",
-    "start": "npm run start:server",
+    "postinstall": "cd server && npm install && cd ../client && npm install",
+    "start": "npm-run-all -p start:server start:client",
     "start:server": "cd server && npm run start",
+    "start:client": "cd client && npm run start",
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "test": "start-server-and-test start http://localhost:3000 cy:open",
-    "test:ci": "start-server-and-test start http://localhost:3000 cy:run"
+    "test": "start-server-and-test start 3000|8080 cy:open",
+    "test:run": "start-server-and-test start \"3000|8080\" cy:run"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,10 @@
   "homepage": "https://github.com/nepalcodes/unitednepali#readme",
   "devDependencies": {
     "cypress": "^4.1.0",
+    "npm-run-all": "^4.1.5",
     "start-server-and-test": "^1.10.8"
+  },
+  "dependencies": {
+    "create-react-app": "^3.4.0"
   }
 }
