@@ -12,7 +12,7 @@ jobs:
         uses: cypress-io/github-action@v1
         with:
           start: "npm run start"
-          wait-on: "http://localhost:3000|http://localhost:8080"
+          wait-on: "http://localhost:3000"
           record: true
         env:
           # pass the Dashboard record key as an environment variable
