@@ -10,8 +10,8 @@
     "start:client": "cd client && npm run start",
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
-    "test": "start-server-and-test start http://localhost:3000 cy:open",
-    "test:ci": "start-server-and-test start http://localhost:3000 cy:run"
+    "test": "start-server-and-test start 3000|8080 cy:open",
+    "test:run": "start-server-and-test start \"3000|8080\" cy:run"
   },
   "repository": {
     "type": "git",
