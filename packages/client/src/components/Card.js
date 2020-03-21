@@ -5,9 +5,12 @@ export function Card({ title, description, link }) {
   return (
     <div
       className={styles.card}>
-      <h1>{title}</h1>
+      <b>{title}</b>
+      <hr></hr>
       {description}
-      <a href={link}>link</a>
+      <div className={`${styles.cardButton}`}>
+        <a href={link}>Read more</a>
+      </div>
     </div>
   );
 }

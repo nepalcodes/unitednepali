@@ -15,7 +15,7 @@ After a clone, in the root level of this repo run:
 # Install all the dependencies
 npm install
 
-# Call bootstrap scirpt to bootstrap the monorepo
+# Call bootstrap script to bootstrap the monorepo
 npm run bootstrap
 
 # Starting the application
