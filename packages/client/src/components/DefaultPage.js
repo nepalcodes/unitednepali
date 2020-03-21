@@ -6,9 +6,9 @@ import { useOrganizations } from "../hooks/useOrganizations";
 
 const url = (name, wrap = false) =>
   `${
-    wrap ? "url(" : ""
+  wrap ? "url(" : ""
   }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-    wrap ? ")" : ""
+  wrap ? ")" : ""
   }`;
 
 const Background = () => {
@@ -151,15 +151,17 @@ export function DefaultPage() {
           <h2> सयौं थुँगा फूलका हामी, एउटै माला नेपाली </h2>
         </ParallaxLayer>
 
-        <ParallaxLayer offest={1.5}>
-          {organizations.map(organization => (
-            <Card
-              key={organization.id}
-              title={organization.name}
-              description={organization.description}
-              link={organization.id}
-            />
-          ))}
+        <ParallaxLayer offset={1.1} speed={0.5}>
+          <div className={styles.organizationSection}>
+            {organizations.map(organization => (
+              <Card
+                key={organization.id}
+                title={organization.name}
+                description={organization.description}
+                link={organization.id}
+              />
+            ))}
+          </div>
         </ParallaxLayer>
 
         <ParallaxLayer offset={2.25} speed={0.5} className={styles.joinSection}>
@@ -171,7 +173,7 @@ export function DefaultPage() {
           </div>
         </ParallaxLayer>
 
-        
+
       </Parallax>
     </div>
   );

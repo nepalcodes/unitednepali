@@ -68,3 +68,19 @@ h1 {
 .startButton {
   background-color: #ff5757ee;
 }
+
+.organizationSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  overflow: hidden;
+  margin:20px;
+  border-color: black;
+  border-width: 5px;
+}

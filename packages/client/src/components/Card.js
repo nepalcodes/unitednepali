@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./Card.module.css";
+import styles from "./DefaultPage.module.css";
 
 export function Card({ title, description, link }) {
   return (
     <div
-      className={styles.container}>
+      className={styles.card}>
       <h1>{title}</h1>
       {description}
       <a href={link}>link</a>
