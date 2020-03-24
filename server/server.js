@@ -6,58 +6,178 @@ const organizations = {
 	0: { 'Name': 'Nandu Business', 'Net Worth': '6 Billion', 'Business Type': 'Real Estate Dealer' },
 	1: { 'Name': 'Sailesh Business', 'Net Worth': '20 Billion', 'Business Type': 'Food Dealer' }
 }
-const event = {
-	0: {'event': 'Teej', 'Location': 'niggerLand', 'Date': '9/11', 'Price': '$69' },
-	1: {'event': 'Christmas', 'Location': 'CuckLand',  'Date': '4/20', 'Price': '$69'}
+const events = {
+	0: {'event': 'Teej', 'Location': 'Hindu Sabha Mandir', 'Date': '9/01', 'Price': '$39' },
+	1: {'event': 'Dashain', 'Location': 'My House',  'Date': '6/20', 'Price': '$62'}
+}
+var ID = 1;
+
+function formatted_timestamp(input_date) {
+  var d = new Date()
+  if (input_date){
+  	d = input_date
+  }
+  d = d.getFullYear() + "-" + ('0' + (d.getMonth() + 1)).slice(-2) + "-" + ('0' + d.getDate()).slice(-2) + " " + ('0' + d.getHours()).slice(-2) + ":" + ('0' + d.getMinutes()).slice(-2) + ":" + ('0' + d.getSeconds()).slice(-2);
+  return d
+}
+
+function get_new_id() {
+	ID++
+	return ID
 }
 
 app.get('/', (req, res) => res.send('Hello United Nepali!'))
 
 app.get('/health-check', (req, res) => res.send('OK'))
 
-app.get('/nepali-check', (req, res) => res.send('Bhaat Khaiyo?'))
-
-app.get('/organizations', (req, res) => res.send(organizations))
-
-app.get('/organizations_id', function (req, res) {
+app.get('/organizations', function(req, res) {
 	var id = req.query.id;
-	let org = organizations[id]
-	res.send(org)
+	if (id && organizations) {
+	  res.status(200)
+      res.send({
+        "success": 1,
+        "timestamp": formatted_timestamp(),
+        "results": organizations[id]
+      })
+    }else if (organizations){
+      res.status(200)
+      res.send({
+        "success": 1,
+        "timestamp": formatted_timestamp(),
+        "results": organizations
+      })
+    } else {
+      res.status(500)
+      res.send({
+        "success": 0,
+        "timestamp": formatted_timestamp(),
+        "error": "Organizations is empty"
+      })
+   }
 })
 
-app.delete('/organization_id', function (req, res) {
-    var id = req.query.id;
-    let org = organizations[id]
-    delete organizations[id]
-    res.sendStatus(200)
+
+app.delete('/organizations', function (req, res) {
+    var id = req.query.id
+    if (id in organizations){
+    	delete organizations[id]
+    	res.send({
+        "success": 1,
+        "timestamp": formatted_timestamp()
+        })
+    }else{
+      res.status(500)
+      res.send({
+        "success": 0,
+        "timestamp": formatted_timestamp(),
+        "error": "Organization does not exist"
+      })
+   }
 })
 
-app.post('/organization_id', function(req, res) {
+app.post('/organizations', function(req, res) {
 	var id = req.query.id;
-	organizations[id] = req.query;
-	res.sendStatus(200);
+	if (id && id in organizations){
+		for (key in req.query){
+			if (key in organizations[id]){
+				organizations[id][key] = req.query.key;
+			}
+		}
+		res.status(200)
+        res.send({
+          "success": 1,
+          "timestamp": formatted_timestamp(),
+          "results": organizations[id]
+        })
+
+	}else if (req.query){
+		id = get_new_id();
+		organizations[id] = {};
+		for (key in req.query){
+			if (key in organizations[id]){
+				organizations[id][key] = req.query.key;
+			}
+		}
+		res.status(200)
+        res.send({
+          "success": 1,
+          "timestamp": formatted_timestamp(),
+          "results": organizations[id]
+        })
+	}else{
+		res.status(500)
+        res.send({
+          "success": 0,
+          "timestamp": formatted_timestamp(),
+          "error": "Empty POST request"
+        })
+	}
+
 })
 
 app.put('/organization_id', function(req, res) {
 	var id = req.query.id;
-	var org = organizations[id];
-
-	for(var key in req.query){
-		if (key in org){
-			org[key] = req.query[key];
+	if (id && id in organizations){
+		for (key in req.query){
+			if (key in organizations[id]){
+				organizations[id][key] = req.query.key;
+			}
 		}
+		res.status(200)
+        res.send({
+          "success": 1,
+          "timestamp": formatted_timestamp(),
+          "results": organizations[id]
+        })
+	}else if (req.query){
+		id = get_new_id();
+		organizations[id] = {};
+		for (key in req.query){
+			if (key in organizations[id]){
+				organizations[id][key] = req.query.key;
+			}
+		}
+		res.status(200)
+        res.send({
+          "success": 1,
+          "timestamp": formatted_timestamp(),
+          "results": organizations[id]
+        })
+	}else{
+		res.status(500)
+        res.send({
+          "success": 0,
+          "timestamp": formatted_timestamp(),
+          "error": "Empty POST request"
+        })
 	}
-	organizations[id] = org;
-
-	res.sendStatus(200);
 })
 
-app.get('/event', (req, res) => res.send(event))
-
-app.get('/event_details', function(req, res){
+app.get('/events', function(req, res) {
 	var id = req.query.id;
-	let lit = event[id]
-	res.send(lit)
+	if (events && id in events) {
+	  res.status(200)
+      res.send({
+        "success": 1,
+        "timestamp": formatted_timestamp(),
+        "results": events[id]
+      })
+    }else if (events){
+      res.status(200)
+      res.send({
+        "success": 1,
+        "timestamp": formatted_timestamp(),
+        "results": events
+      })
+    } else {
+      res.status(500)
+      res.send({
+        "success": 0,
+        "timestamp": formatted_timestamp(),
+        "error": "Events is empty"
+      })
+   }
 })
+
 
 app.listen(port, () => console.log(`Example app listening on port ${ port }!`))
