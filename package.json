@@ -11,7 +11,8 @@
     "cy:run": "npx cypress run",
     "test": "start-server-and-test start \"3000|8080\" cy:open",
     "test-run": "start-server-and-test start \"3000|8080\" cy:run",
-    "bootstrap": "lerna clean -y && lerna bootstrap --hoist"
+    "bootstrap": "lerna clean -y && lerna bootstrap --hoist",
+    "build-client": "lerna run build --scope=united-nepali-client"
   },
   "repository": {
     "type": "git",
