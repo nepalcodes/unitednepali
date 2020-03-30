@@ -20,14 +20,14 @@ jobs:
           REACT_APP_FIRESTORE_API_BASE_URL: ${{ secrets.REACT_APP_FIRESTORE_API_BASE_URL }}
       # Deploy to gh-pages
       - name: Build
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/test-ghpages'
         run:
           npm run build-client
         env:
           REACT_APP_FIRESTORE_API_BASE_URL: ${{ secrets.REACT_APP_FIRESTORE_API_BASE_URL }}
       
       - name: Deploy
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/test-ghpages'
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
