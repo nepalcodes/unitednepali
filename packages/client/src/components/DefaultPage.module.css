@@ -88,6 +88,7 @@ h1 {
   font-size: smaller;
   padding: 2%;
   text-align: left;
+  overflow-y: auto;
 }
 
 .cardButton {
@@ -102,4 +103,10 @@ h1 {
   line-height: 30px;
   top: 10px;
   left: -5px;
+}
+
+.cardButton a {
+  color: #ffffff;
+  font-weight:bold;
+  text-decoration:none;
 }
