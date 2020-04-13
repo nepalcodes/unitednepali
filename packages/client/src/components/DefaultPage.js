@@ -6,21 +6,21 @@ import { useOrganizations } from "../hooks/useOrganizations";
 
 const url = (name, wrap = false) =>
   `${
-  wrap ? "url(" : ""
+    wrap ? "url(" : ""
   }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-  wrap ? ")" : ""
+    wrap ? ")" : ""
   }`;
 
 const Background = () => {
   return (
     <>
       <ParallaxLayer
-        offset={1}
+        offset={0.9999}
         speed={1}
         style={{ backgroundColor: "#ff5757AA" }}
       />
       <ParallaxLayer
-        offset={2}
+        offset={1.9999}
         speed={1}
         style={{ backgroundColor: "#87BCDE" }}
       />
@@ -31,7 +31,7 @@ const Background = () => {
         factor={3}
         style={{
           backgroundImage: url("stars", true),
-          backgroundSize: "cover"
+          backgroundSize: "cover",
         }}
       />
 
@@ -124,7 +124,7 @@ const Background = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          pointerEvents: "none"
+          pointerEvents: "none",
         }}
       >
         <img src={url("earth")} style={{ width: "60%" }} alt="" />
@@ -138,40 +138,42 @@ export function DefaultPage() {
 
   return (
     <div className={styles.container}>
-      <Parallax
-        pages={3}
-        scrolling={true}
-        vertical
-      >
+      <Parallax pages={2.5} scrolling={true} vertical>
         <Background />
 
         <ParallaxLayer offset={0} speed={0.5} className={styles.titleSection}>
           <div className={styles.logo}> </div>
           <h1> UNITED NEPALI</h1>
+          <h2> सयौं थुँगा फूलका हामी, एउटै माला नेपाली </h2>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1} speed={0.5} className={styles.titleSection}>
+        <ParallaxLayer
+          offset={0.75}
+          speed={0.5}
+          className={styles.titleSection}
+        >
           <h1>OUR MISSION</h1>
-          <div style={{
-            width: "50%",
-            backgroundColor: "rgba(50, 50, 50, 0.3)",
-            padding: "15px 15px 15px 15px",
-            borderRadius: "15px"
-          }}>
-          <b>
-          United Nepali aims to be the go-to site to find Nepali Communities
-          in your area. With hundreds of different communities which use
-          various ways to spread information about events like meetup,
-          eventbrite, community websites, email lists, etc. United Nepali
-          will be the one place you can find everything.
-          </b>
+          <div
+            style={{
+              width: "50%",
+              backgroundColor: "rgba(50, 50, 50, 0.3)",
+              padding: "15px 15px 15px 15px",
+              borderRadius: "15px",
+            }}
+          >
+            <b>
+              United Nepali aims to be the go-to site to find Nepali Communities
+              in your area. With hundreds of different communities which use
+              various ways to spread information about events like meetup,
+              eventbrite, community websites, email lists, etc. United Nepali
+              will be the one place you can find everything.
+            </b>
           </div>
-
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.1} speed={0.5}>
+        <ParallaxLayer offset={1.1} speed={0.75}>
           <div className={styles.organizationSection}>
-            {organizations.map(organization => (
+            {organizations.map((organization) => (
               <Card
                 key={organization.id}
                 title={organization.name}
@@ -182,16 +184,16 @@ export function DefaultPage() {
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.25} speed={0.5} className={styles.joinSection}>
-          <div className={`${styles.button} ${styles.startButton}`}>
-            Get Started!
-          </div>
-          <div className={`${styles.button} ${styles.joinButton}`}>
-            Add your organization
-          </div>
+        <ParallaxLayer offset={2} speed={0.5} className={styles.joinSection}>
+          <a
+            href="https://forms.gle/Wjk46ahVCnyuzpTu9"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            <div className={`${styles.button} ${styles.startButton}`}>
+              Getting Started!
+            </div>
+          </a>
         </ParallaxLayer>
-
-
       </Parallax>
     </div>
   );
