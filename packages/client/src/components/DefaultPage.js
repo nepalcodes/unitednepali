@@ -148,7 +148,25 @@ export function DefaultPage() {
         <ParallaxLayer offset={0} speed={0.5} className={styles.titleSection}>
           <div className={styles.logo}> </div>
           <h1> UNITED NEPALI</h1>
-          <h2> सयौं थुँगा फूलका हामी, एउटै माला नेपाली </h2>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1} speed={0.5} className={styles.titleSection}>
+          <h1>OUR MISSION</h1>
+          <div style={{
+            width: "50%",
+            backgroundColor: "rgba(50, 50, 50, 0.3)",
+            padding: "15px 15px 15px 15px",
+            borderRadius: "15px"
+          }}>
+          <b>
+          United Nepali aims to be the go-to site to find Nepali Communities
+          in your area. With hundreds of different communities which use
+          various ways to spread information about events like meetup,
+          eventbrite, community websites, email lists, etc. United Nepali
+          will be the one place you can find everything.
+          </b>
+          </div>
+
         </ParallaxLayer>
 
         <ParallaxLayer offset={1.1} speed={0.5}>
