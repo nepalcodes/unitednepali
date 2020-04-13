@@ -1,7 +1,7 @@
 
 export async function getOrganizations() {
 
-  const url = `${process.env.REACT_APP_FIRESTORE_API_BASE_URL}organizations`;
+  const url = `https://firestore.googleapis.com/v1/projects/united-nepali/databases/(default)/documents/api/v1/organizations`;
   const response = await fetch(url);
   const result = await response.json();
   const documents = result.documents;
