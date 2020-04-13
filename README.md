@@ -1,4 +1,5 @@
 # United Nepali
+[![Netlify Status](https://api.netlify.com/api/v1/badges/77944c6d-f2ee-4f3e-8666-d3814761330b/deploy-status)](https://app.netlify.com/sites/unitednepali/deploys)
 ![End-to-end tests](https://github.com/nepalcodes/unitednepali/workflows/End-to-end%20tests/badge.svg?branch=master)
 
 :wave: Welcome to United Nepali!
