@@ -43,6 +43,9 @@ Supplied is a `docker-compose.yml` file, this defines the orchestration of all t
 ```bash
 # build, (re)creates, start and attaches to containers
 docker-compose up --build
+
+# teardown all containers
+docker-compose down
 ```
 
 Once containers are built and running, you can check if the app is running on your browser at http://localhost,
