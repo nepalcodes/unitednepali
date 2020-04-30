@@ -25,6 +25,34 @@ npm run start
 
 UI runs on http://localhost:8080 and server runs on http://localhost:3000
 
+# Docker Workflow
+
+The project is also configured for a containerized workflow, currently there are 4 services:
+
+* `unitednepali-server` (express server): this is the backend service for the web application
+* `unitednepali-client` (react frontend): this is the react frontend
+* `unitednepali-db` (postgres db): postgres database 
+* `unitednepali-nginx` (nginx): nginx webserver, which can also be used as a reverse proxy
+
+Each service is built and deployed through Docker, see corresponding service's `Dockerfile` for details.
+We use `docker-compose` to orchestrate all the services together. See Docker [site](https://docs.docker.com/compose/install/) for OS specific installation instructions.
+
+## Building and running locally
+Supplied is a `docker-compose.yml` file, this defines the orchestration of all the containers.
+
+```bash
+# building containers
+docker-compose build
+
+# build, (re)creates, start and attaches to containers
+docker-compose up
+```
+
+Once containers are built and running, you can check if the app is running on your browser at http://localhost,
+unitednepali api is correspondingly running on http://localhost/api/.
+
+See docker [documentation](https://docs.docker.com/compose/reference/) for full usage of `docker-compose` commands.
+
 ## Running e2e tests
 
 Project uses cypress for end-to-end testing, to run the tests:

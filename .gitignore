@@ -124,3 +124,5 @@ sketch
 
 /cypress/videos
 .DS_Store
+
+!docker/*

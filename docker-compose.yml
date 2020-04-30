@@ -1,0 +1,51 @@
+version: '3.7'
+
+services:
+    unitednepali-server:
+        env_file: docker/.env
+        container_name: unitednepali-server
+        build:
+            context: packages/server
+            dockerfile: Dockerfile
+        volumes:
+            - './packages/server:/usr/src/app'
+            - '/usr/src/app/node_modules'
+        ports:
+            - 3007:3000
+            
+    unitednepali-client:
+        env_file: docker/.env
+        container_name: unitednepali-client
+        build:
+            context: packages/client
+            dockerfile: Dockerfile
+        volumes:
+            - './packages/client:/usr/src/app'
+            - '/usr/src/app/node_modules'
+        ports:
+            - 3008:8080
+        depends_on: 
+            - unitednepali-server
+    
+    nginx:
+        env_file: docker/.env
+        container_name: unitednepali-nginx
+        build:
+            context: services/nginx
+            dockerfile: Dockerfile
+        restart: always
+        ports:
+            - 80:80
+        depends_on: 
+            - unitednepali-client
+            - unitednepali-server
+    
+    db:
+        env_file: docker/.env
+        image: postgres:10
+        container_name: unitednepali-db
+        restart: unless-stopped
+        ports:
+            - 5432:5432
+        volumes:
+            - '/var/lib/postgresql/data'
