@@ -10,7 +10,7 @@ let currId = 0
 
 
 
-app.get('/api/', (req, res) => res.send('Hello United Nepali!'))
+app.get('/api', (req, res) => res.send('Hello United Nepali!'))
 
 app.get('/api/health-check', (req, res) => res.send('OK'))
 

@@ -41,11 +41,8 @@ We use `docker-compose` to orchestrate all the services together. See Docker [si
 Supplied is a `docker-compose.yml` file, this defines the orchestration of all the containers.
 
 ```bash
-# building containers
-docker-compose build
-
 # build, (re)creates, start and attaches to containers
-docker-compose up
+docker-compose up --build
 ```
 
 Once containers are built and running, you can check if the app is running on your browser at http://localhost,
