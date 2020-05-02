@@ -10,15 +10,15 @@ let currId = 0
 
 
 
-app.get('/', (req, res) => res.send('Hello United Nepali!'))
+app.get('/api', (req, res) => res.send('Hello United Nepali!'))
 
-app.get('/health-check', (req, res) => res.send('OK'))
+app.get('/api/health-check', (req, res) => res.send('OK'))
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
-app.get('/organizations', (req, res) => res.send(organizations))
+app.get('/api/organizations', (req, res) => res.send(organizations))
 
-app.post('/organizations', function(req, res){
+app.post('/api/organizations', function(req, res){
 	let id_val = currId;
 	currId = currId + 1;
 
