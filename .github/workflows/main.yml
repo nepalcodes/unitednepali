@@ -1,6 +1,15 @@
 name: End-to-end tests
 on: [push]
 jobs:
+  eslint:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Lint JS code
+        uses: hallee/eslint-action@master
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN}}
   cypress-run:
     runs-on: ubuntu-16.04
     steps:
