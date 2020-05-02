@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - run: npm install
+      - run: npm install --save-dev
       - run: lerna bootstrap
       - name: Lint javscript code
         run: npm run lint
