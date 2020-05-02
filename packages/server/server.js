@@ -1,6 +1,7 @@
 const express = require('express');
 
 const app = express();
+const port = 3000;
 
 const bodyParser = require('body-parser');
 
@@ -13,6 +14,10 @@ let currId = 0;
 app.get('/api', (req, res) => res.send('Hello United Nepali!'));
 
 app.get('/api/health-check', (req, res) => res.send('OK'));
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+app.get('/api/organizations', (req, res) => res.send(organizations));
 
 app.post('/api/organizations', (req, res) => {
   const idVal = currId;

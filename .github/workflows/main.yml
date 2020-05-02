@@ -7,7 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - run: npm install
-      - name: Lint javscritp code
+      - name: Lint javscript code
         run: npm run lint
   cypress-run:
     runs-on: ubuntu-16.04
@@ -20,8 +20,6 @@ jobs:
         run: docker ps -a
       - name: Check logs
         run: docker logs unitednepali-client
-      - name: npm install
-        run: npm install
       # Run all Cypress tests
       - name: Run E2E tests
         uses: cypress-io/github-action@v1
