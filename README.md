@@ -64,3 +64,8 @@ npm run test
 # To just run the e2e tests
 npm run test-run
 ```
+
+# FAQ
+
+**I'm getting an error when I try to run an npm command**
+Make sure you've run `npm install` and `npm run bootstrap` 
