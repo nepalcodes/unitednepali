@@ -1,5 +1,5 @@
 describe('organizations', () =>{
-    Cypress.config('baseUrl','http://localhost:3000/')
+    Cypress.config('baseUrl','http://localhost/api/')
 
     it('GET - read', () => {
       cy.request('/organizations').then((response) => {
