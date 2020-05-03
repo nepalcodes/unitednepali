@@ -12,7 +12,8 @@
     "test": "start-server-and-test start \"3000|8080\" cy:open",
     "test-run": "start-server-and-test start \"3000|8080\" cy:run",
     "bootstrap": "lerna clean -y && lerna bootstrap --hoist",
-    "lint": "npx eslint . --ext .js --ignore-pattern node_modules/ --ignore-pattern build/ --ignore-pattern cypress/"
+    "lint": "npx eslint . --ext .js --ignore-pattern node_modules/ --ignore-pattern build/ --ignore-pattern cypress/ -o .test/eslint-report.html -f html ",
+    "lint-fix": "npx eslint . --fix --ext .js --ignore-pattern node_modules/ --ignore-pattern build --ignore-pattern cypress/"
   },
   "repository": {
     "type": "git",
