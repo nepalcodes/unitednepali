@@ -1,18 +1,31 @@
 name: End-to-end tests
 on: [push]
 jobs:
+  eslint:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - run: npm install
+      - run: npm run bootstrap
+      - name: Lint javscript code
+        run: npm run lint
   cypress-run:
     runs-on: ubuntu-16.04
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      - name: Build docker-compose stack
+        run: docker-compose up -d --build
+      - name: Check running containers
+        run: docker ps -a
+      - name: Check logs
+        run: docker logs unitednepali-client
+      # Run all Cypress tests
       - name: Run E2E tests
         uses: cypress-io/github-action@v1
         with:
-          start: "npm run start"
-          wait-on: "http://localhost:3000"
+          wait-on: "http://localhost"
           record: true
         env:
           # pass the Dashboard record key as an environment variable

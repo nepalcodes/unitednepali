@@ -1,8 +1,8 @@
-describe('Truthy test', function() {
-  it('succeeds!', function() {
-    expect(true).to.equal(true)
-  })
-})
+describe('Truthy test', () => {
+  it('succeeds!', () => {
+    expect(true).to.equal(true);
+  });
+});
 
 // describe('Falsy test', function() {
 //   it('fails!', function() {

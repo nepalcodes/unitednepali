@@ -1,6 +1,6 @@
 {
   "name": "united-nepali-server",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "United Nepali Project Server",
   "main": "server.js",
   "scripts": {
