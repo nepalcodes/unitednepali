@@ -10,6 +10,11 @@ jobs:
       - run: npm run bootstrap
       - name: Lint javscript code
         run: npm run lint
+      - name: Archive eslint report
+        uses: actions/upload-artifact@v1
+        with:
+          name: eslint-report
+          path: .test/eslint-report.html
   cypress-run:
     runs-on: ubuntu-16.04
     steps:
