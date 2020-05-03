@@ -126,3 +126,5 @@ sketch
 .DS_Store
 
 !docker/*
+
+.test/
