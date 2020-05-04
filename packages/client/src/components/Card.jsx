@@ -1,12 +1,13 @@
-import React from "react";
-import styles from "./DefaultPage.module.css";
+import React from 'react';
+import styles from './DefaultPage.module.css';
 
 export function Card({ title, description, link }) {
   return (
     <div
-      className={styles.card}>
+      className={styles.card}
+    >
       <b>{title}</b>
-      <hr></hr>
+      <hr />
       {description}
       <div className={`${styles.cardButton}`}>
         <a href={link}>Read more</a>
