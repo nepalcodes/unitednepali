@@ -1,7 +1,7 @@
 import React from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import styles from './DefaultPage.module.css';
-import { Card } from './Card';
+import Card from './Card';
 import useOrganizations from '../hooks/useOrganizations';
 
 const url = (name, wrap = false) => `${
@@ -130,7 +130,7 @@ const Background = () => (
   </>
 );
 
-export function DefaultPage() {
+export default function DefaultPage() {
   const organizations = useOrganizations();
 
   return (

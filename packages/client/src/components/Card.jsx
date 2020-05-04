@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './DefaultPage.module.css';
 
-export function Card({ title, description, link }) {
+export default function Card({ title, description, link }) {
   return (
     <div
       className={styles.card}

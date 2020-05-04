@@ -12,8 +12,8 @@
     "test": "start-server-and-test start \"3000|8080\" cy:open",
     "test-run": "start-server-and-test start \"3000|8080\" cy:run",
     "bootstrap": "lerna clean -y && lerna bootstrap --hoist",
-    "lint": "npx eslint . --ext .js -o .test/eslint-report.html -f html ",
-    "lint-fix": "npx eslint . --fix --ext .js"
+    "lint": "npx eslint . --ext .js,.jsx -o .test/eslint-report.html -f html ",
+    "lint-fix": "npx eslint . --fix --ext .js,.jsx"
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "create-react-app": "^3.4.0",
-    "eslint-plugin-flowtype": "^4.7.0"
+    "eslint-plugin-flowtype": "^4.7.0",
+    "prop-types": "^15.7.2"
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
 
-export function Mission() {
+export default function Mission() {
   return <div>Mission!!</div>;
 }
