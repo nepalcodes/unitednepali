@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './DefaultPage.module.css';
 
 export default function Card({ title, description, link }) {
@@ -15,3 +16,9 @@ export default function Card({ title, description, link }) {
     </div>
   );
 }
+
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+};
