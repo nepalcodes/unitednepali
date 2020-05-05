@@ -68,4 +68,23 @@ npm run test-run
 # FAQ
 
 **I'm getting an error when I try to run an npm command**
-Make sure you've run `npm install` and `npm run bootstrap` 
+Make sure you've run `npm install` and `npm run bootstrap`
+
+**How to add a new npm package to the client or server package**
+We use lerna to maintain the npm packages:
+```bash
+# we current manage 2 packages with lerna united-nepali-client and united-nepali-server
+lern add [npm-package-name] --scope united-nepali-client
+```
+
+**Running eslint to analyze the javascript source code**
+```bash
+# to just run eslint on .js and .jsx files
+npm run lint
+
+# to run lint and fix the flagged violations
+npm run lint-fix
+
+# to run eslint and see a html report, output will be in .test/eslint-report.html
+npm run lint-report
+```
