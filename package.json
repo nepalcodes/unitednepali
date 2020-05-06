@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "lerna bootstrap && lerna run start --stream",
-    "start-server": "lerna run start --scope=united-nepali-server",
-    "start-client": "lerna run start --scope=united-nepali-client",
+    "start-server": "lerna run start --scope=unitednepali-server",
+    "start-client": "lerna run start --scope=unitednepali-client",
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
     "test": "start-server-and-test start \"3000|8080\" cy:open",
