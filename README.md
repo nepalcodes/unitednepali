@@ -44,6 +44,9 @@ Supplied is a `docker-compose.yml` file, this defines the orchestration of all t
 # build, (re)creates, start and attaches to containers
 docker-compose up --build
 
+# build, (recreates), start, detached mode (run containers in background):
+docker-compose up -d --build
+
 # teardown all containers
 docker-compose down
 ```
@@ -71,10 +74,10 @@ npm run test-run
 Make sure you've run `npm install` and `npm run bootstrap`
 
 **How to add a new npm package to the client or server package**
-We use lerna to maintain the npm packages:
+We use lerna to maintain the npm packages and our own javascript packages:
 ```bash
-# we current manage 2 packages with lerna united-nepali-client and united-nepali-server
-lern add [npm-package-name] --scope united-nepali-client
+# we currently manage 2 packages with lerna unitednepali-client and unitednepali-server
+lern add [npm-package-name] --scope unitednepali-client
 ```
 
 **Running eslint to analyze the javascript source code**
@@ -87,4 +90,35 @@ npm run lint-fix
 
 # to run eslint and see a html report, output will be in .test/eslint-report.html
 npm run lint-report
+```
+**What techonlogies do we use**
+* [React](https://reactjs.org/) for frontend components, client side code lives under `packages/client`.
+* [Express](https://expressjs.com) for backend server, server code lives under `packages/server`.
+* [Lerna](https://lerna.js.org) for managing our javascript projects which are all under `packages`.
+* [Cypress](https://www.cypress.io/) for end to end testing our application.
+* [Docker](https://www.docker.com/) encompass the project in containers.
+* [Postgres](https://www.postgresql.org/) as our sql database.
+
+**Project Structure**
+```bash
+.
+├── README.md
+├── cypress
+│   ├── fixtures
+│   ├── integration
+│   ├── plugins
+│   ├── support
+│   └── videos
+├── cypress.json
+├── docker
+├── docker-compose.yml
+├── lerna.json
+├── package-lock.json
+├── package.json
+├── packages
+│   ├── client
+│   └── server
+└── services
+    ├── db
+    └── nginx
 ```
