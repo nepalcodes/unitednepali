@@ -1,0 +1,15 @@
+{
+    "root": false,
+    "env" : {
+        "cypress/globals": true
+    },
+    "extends": [
+        "plugin:cypress/recommended"
+    ],
+    "rules": {
+        "cypress/no-assigning-return-values": "error",
+        "cypress/no-unnecessary-waiting": "error",
+        "cypress/assertion-before-screenshot": "warn",
+        "cypress/no-force": "warn"
+      }
+}
