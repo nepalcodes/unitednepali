@@ -77,7 +77,7 @@ Make sure you've run `npm install` and `npm run bootstrap`
 We use lerna to maintain the npm packages and our own javascript packages:
 ```bash
 # we currently manage 2 packages with lerna unitednepali-client and unitednepali-server
-lern add [npm-package-name] --scope unitednepali-client
+lerna add [npm-package-name] --scope unitednepali-client
 ```
 
 **Running eslint to analyze the javascript source code**
