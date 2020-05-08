@@ -42,8 +42,10 @@ services:
     
     db:
         env_file: docker/.env
-        image: postgres:10
         container_name: unitednepali-db
+        build:
+            context: services/db
+            dockerfile: Dockerfile
         restart: unless-stopped
         ports:
             - 5432:5432

@@ -1,5 +1,5 @@
 --Assumption: the database exists
---CREATE DATABASE united_nepali_db; 
+--CREATE DATABASE unitednepali; 
 
 --Clean the schema	
 DROP SCHEMA public CASCADE;
