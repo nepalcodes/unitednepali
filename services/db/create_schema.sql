@@ -54,9 +54,9 @@ CREATE TABLE security_profile(
 	id VARCHAR(128) NOT NULL,
 	created_date TIMESTAMP NOT NULL,
 	description VARCHAR(256) NULL,
-	CONSTRAINT PK_SecurityProfile PRIMARY KEY  
+	CONSTRAINT pk_security_profile PRIMARY KEY  
 	(
-		Id
+		id
 	));
 
 CREATE TABLE security_profile_role(
