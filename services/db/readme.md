@@ -43,4 +43,14 @@ and these is not shared with other organizations
 # Database Information 
 
 **Postgres** is the open source relational database. You can find more about this [here !!!](https://www.postgresql.org/)  
-**pgAdmin4** is the database management tool, which might ease to design and view the tables/relations.  
+**pgAdmin4** is the database management tool, which might ease to design and view the tables/relations. 
+
+# Local development using docker
+
+If using the project's `docker-compose` setup, the container runs on `localhost:5432`, connect to it using your favourite Postgres client.
+Available open source clients:
+* [pgAdmin](https://www.pgadmin.org/)
+* [Postico](https://eggerapps.at/postico/) _Mac OSX only_
+* [DBeaver](https://dbeaver.io/)
+
+Credentials are supplied in `docker/.env` file
