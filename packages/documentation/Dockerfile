@@ -1,10 +1,11 @@
 FROM node:lts
 
-WORKDIR /app/website
+# The dockerfile folder has to match the documentation folder name as
+# Docusaurus uses the top folder (documentation) to find the docs foler
+WORKDIR /documentation
 
 EXPOSE 3000 35729
-COPY ./docs /app/docs
-COPY ./website /app/website
-RUN yarn install
+COPY . /documentation
+RUN npm install
 
-CMD ["yarn", "start"]
+CMD ["npm", "start"]

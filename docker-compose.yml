@@ -12,7 +12,7 @@ services:
             - '/usr/src/app/node_modules'
         ports:
             - 3007:3000
-            
+
     unitednepali-client:
         env_file: docker/.env
         container_name: unitednepali-client
@@ -24,9 +24,19 @@ services:
             - '/usr/src/app/node_modules'
         ports:
             - 3008:8080
-        depends_on: 
+        depends_on:
             - unitednepali-server
-    
+
+    unitednepali-documentation:
+        build:
+            context: packages/documentation
+            dockerfile: Dockerfile
+        ports:
+          - 3009:3000
+          - 35729:35729
+        volumes:
+          - './packages/documentation:/documentation'
+
     nginx:
         env_file: docker/.env
         container_name: unitednepali-nginx
@@ -36,10 +46,11 @@ services:
         restart: always
         ports:
             - 80:80
-        depends_on: 
+        depends_on:
             - unitednepali-client
             - unitednepali-server
-    
+            - unitednepali-documentation
+
     db:
         env_file: docker/.env
         container_name: unitednepali-db
