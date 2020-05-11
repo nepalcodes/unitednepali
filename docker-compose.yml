@@ -51,3 +51,13 @@ services:
             - 5432:5432
         volumes:
             - '/var/lib/postgresql/data'
+    hasura:
+        env_file: docker/.env
+        container_name: unitednepali-hasura
+        image: hasura/graphql-engine:v1.2.1
+        ports:
+            - 8888:8080
+        restart: always
+        depends_on:
+            - db
+
