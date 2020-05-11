@@ -1,26 +1,16 @@
 {
-  "name": "documentation",
+  "name": "unitednepali-documentation",
   "version": "0.1.0",
-  "description": "> TODO: description",
-  "author": "Binam Kayastha <binamkayastha@gmail.com>",
-  "homepage": "https://github.com/nepalcodes/unitednepali/tree/master/packages/documentation#readme",
-  "license": "ISC",
-  "main": "lib/documentation.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nepalcodes/unitednepali.git"
-  },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "examples": "docusaurus-examples",
+    "start": "docusaurus-start",
+    "build": "docusaurus-build",
+    "publish-gh-pages": "docusaurus-publish",
+    "write-translations": "docusaurus-write-translations",
+    "version": "docusaurus-version",
+    "rename-version": "docusaurus-rename-version"
   },
-  "bugs": {
-    "url": "https://github.com/nepalcodes/unitednepali/issues"
+  "devDependencies": {
+    "docusaurus": "^1.14.4"
   }
 }
