@@ -3,30 +3,30 @@
 The initial database schema description for the major domain entities are:  
 
 ## Login 
-**UserLogin** table stores the user login information  
-This table will be related to the **User** table to get the user related informations  
+**user_login** stores the user login information  
+
+## Role Management
+**role** holds the available access functionalities for various features in the system  
+**security_profile** is the authorization privileges (such as Admin, User, Manager), that can be created by Administrator
+**security_profile_role** is the mapping, or the roles that is assigned to each created security profile
 
 ## User Management
-
-**User** is the master table for the user personnel information  
-**Roles** table holds the all available roles to access different functionality of the system  
-**SecurityProfile** is the authorization previlege, that can be created by Administrator with specific roles  
-**UserSecurityProfile** is the record of the users for their specific profiles  
+**users** holds the master user personnel information. It is referenced to login table  
+**user_security_profile** records the profile which is assigned for the created users
 
 ## Organization Management
-
-**Organization** is the master table for the organization level details  
-**OrganizationUser** will keep track of the different users, association with particular organization  
+**organization** holds the master organization level details  
+**organization_user** will keep track of the different users, association with particular organization  
 
 ## Events Management
-**Event** is the master table for recording any events  
-**EventRegistration** will keep track of the user coming in a particular event  
+**event** is the master table for recording any events  
+**event_registration** will keep track of the user coming in a particular event  
 
 
 ### Database Schema v1.0
 The following snapshot shows the first version of the Schema:  
 
-![UnitedNepaliDb Schema](diagrams/UnitedNepaliDb-Schema-v1.0.png)  
+![UnitedNepaliDb Schema](diagrams/UnitedNepaliDb-Schema-v1.1.png)  
 
 
 # Design Discussions
