@@ -31,7 +31,6 @@ CREATE TABLE user_login(
 	user_confirmed BOOLEAN NOT NULL DEFAULT FALSE,
 	password_hash TEXT NULL,
 	last_login_date TIMESTAMP NULL,
-	created_by VARCHAR(128) NOT NULL,
 	created_date TIMESTAMP NOT NULL,
 	is_active BOOLEAN NOT NULL DEFAULT FALSE,
 	CONSTRAINT pk_user_login PRIMARY KEY  
@@ -40,7 +39,7 @@ CREATE TABLE user_login(
 	));
 
 --Create Roles for basically every minute actions we want to control and assign it to various profiles
---These are upDATEd using scripts as new functionality are added to the application
+--These are updated using scripts as new functionality are added to the application
 CREATE TABLE role(
 	id VARCHAR(128) NOT NULL,
 	description VARCHAR(256) NULL,
@@ -124,7 +123,7 @@ CREATE TABLE users(
 	other_names VARCHAR(256) NULL,
 	title VARCHAR(100) NULL,
 	administrative_sex VARCHAR(50) NULL,
-	date_of_birth VARCHAR(50) NULL,
+	date_of_birth TIMESTAMP NULL,
 	highest_education VARCHAR(50) NULL,
 	profession VARCHAR(50) NULL,
 	street_address VARCHAR(128) NULL,
@@ -157,7 +156,7 @@ CREATE TABLE organization_user(
 
 --- EVENT MANAGEMENT ---
 CREATE TABLE event(
-	id INT  NOT NULL,
+	id SERIAL NOT NULL,
 	name VARCHAR(50) NULL,
 	location VARCHAR(255) NULL,
 	start_date TIMESTAMP NULL,
@@ -194,6 +193,3 @@ CREATE TABLE event_registration(
 --Purchases and expenses in the organization
 --Report generation for the organizations (Charts/Tables/...)
 --Organization Gallery (Pictures/Videos)
-
-
-
