@@ -1,0 +1,30 @@
+{
+  "name": "unitednepali-gatsby",
+  "version": "0.1.0",
+  "description": "Gatsby project for unitednepali",
+  "author": "Sonal Ranjit <sonal.ranjit3@gmail.com>",
+  "homepage": "https://github.com/nepalcodes/unitednepali/tree/master/packages/unitednepali-gatsby#readme",
+  "license": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nepalcodes/unitednepali.git"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "serve": "gatsby server",
+    "clean": "gatsby clean"
+  },
+  "bugs": {
+    "url": "https://github.com/nepalcodes/unitednepali/issues"
+  },
+  "dependencies": {
+    "gatsby": "^2.23.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-spring": "^8.0.27",
+    "use-async-effect": "^2.2.2"
+  }
+}
