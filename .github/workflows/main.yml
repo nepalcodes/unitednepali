@@ -24,7 +24,7 @@ jobs:
       - name: Check running containers
         run: docker ps -a
       - name: Check logs
-        run: docker logs unitednepali-client
+        run: docker logs unitednepali-gatsby
       # Run all Cypress tests
       - name: Run E2E tests
         uses: cypress-io/github-action@v1
