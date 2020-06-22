@@ -10,7 +10,7 @@ If you would like to join us please reach out on [SLACK](https://join.slack.com/
 
 # Getting started
 
-After a clone, in the root level of this repo run: 
+After a clone, in the root level of this repo run:
 
 ```bash
 # Install all the dependencies
@@ -31,7 +31,7 @@ The project is also configured for a containerized workflow, currently there are
 
 * `unitednepali-server` (express server): this is the backend service for the web application
 * `unitednepali-client` (react frontend): this is the react frontend
-* `unitednepali-db` (postgres db): postgres database 
+* `unitednepali-db` (postgres db): postgres database
 * `unitednepali-nginx` (nginx): nginx webserver, which can also be used as a reverse proxy
 
 Each service is built and deployed through Docker, see corresponding service's `Dockerfile` for details.
@@ -117,7 +117,8 @@ npm run lint-report
 ├── package.json
 ├── packages
 │   ├── client
-│   └── server
+│   ├── server
+│   └── documentation
 └── services
     ├── db
     └── nginx
