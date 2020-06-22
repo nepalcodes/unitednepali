@@ -1,4 +1,4 @@
 {
     "root": true,
-    "ignorePatterns": ["node_modules/", "build/"]
+    "ignorePatterns": ["node_modules/", "build/", "public/"]
 }

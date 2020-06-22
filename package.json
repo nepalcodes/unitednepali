@@ -6,7 +6,8 @@
   "scripts": {
     "start": "lerna bootstrap && lerna run start --stream",
     "start-server": "lerna run start --scope=unitednepali-server",
-    "start-gatsby": "lerna run develop --scope=unitednepali-gatsby",
+    "start-client": "lerna run start --scope=unitednepali-client --stream",
+    "build": "lerna run build --scope=unitednepali-client",
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
     "test": "start-server-and-test start \"3000|8080\" cy:open",

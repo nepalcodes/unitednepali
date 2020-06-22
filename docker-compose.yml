@@ -13,14 +13,14 @@ services:
         ports:
             - 3007:3000
             
-    unitednepali-gatsby:
+    unitednepali-client:
         env_file: docker/.env
-        container_name: unitednepali-gatsby
+        container_name: unitednepali-client
         build:
-            context: packages/unitednepali-gatsby
+            context: packages/client
             dockerfile: Dockerfile
         volumes:
-            - './packages/unitednepali-gatsby:/usr/src/app'
+            - './packages/client:/usr/src/app'
             - '/usr/src/app/node_modules'
         ports:
             - 3008:8000
@@ -37,7 +37,7 @@ services:
         ports:
             - 80:80
         depends_on: 
-            - unitednepali-gatsby
+            - unitednepali-client
             - unitednepali-server
     
     db:
