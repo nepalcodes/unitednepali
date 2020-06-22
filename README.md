@@ -30,7 +30,7 @@ UI runs on http://localhost:8080 and server runs on http://localhost:3000
 The project is also configured for a containerized workflow, currently there are 4 services:
 
 * `unitednepali-server` (express server): this is the backend service for the web application
-* `unitednepali-client` (react frontend): this is the react frontend
+* `unitednepali-client` (react frontend): this is the react frontend, managed by gatsby
 * `unitednepali-db` (postgres db): postgres database 
 * `unitednepali-nginx` (nginx): nginx webserver, which can also be used as a reverse proxy
 
@@ -95,6 +95,7 @@ npm run lint-report
 * [React](https://reactjs.org/) for frontend components, client side code lives under `packages/client`.
 * [Express](https://expressjs.com) for backend server, server code lives under `packages/server`.
 * [Lerna](https://lerna.js.org) for managing our javascript projects which are all under `packages`.
+* [Gatsby](https://gatsbyjs.org) for frontend framework and static site generation.
 * [Cypress](https://www.cypress.io/) for end to end testing our application.
 * [Docker](https://www.docker.com/) encompass the project in containers.
 * [Postgres](https://www.postgresql.org/) as our sql database.

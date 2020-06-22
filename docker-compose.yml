@@ -23,7 +23,7 @@ services:
             - './packages/client:/usr/src/app'
             - '/usr/src/app/node_modules'
         ports:
-            - 3008:8080
+            - 3008:8000
         depends_on: 
             - unitednepali-server
     

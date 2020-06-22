@@ -7,4 +7,5 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package*.json /usr/src/app/
 RUN npm install --silent
 
-CMD ["npm", "start"]
+CMD ["gatsby", "develop", "-H", "0.0.0.0"]
+

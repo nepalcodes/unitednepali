@@ -1,38 +1,32 @@
 {
   "name": "unitednepali-client",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-router-dom": "5.1.2",
-    "react-scripts": "3.4.0",
-    "react-spring": "8.0.27",
-    "use-async-effect": "2.2.2"
+  "description": "Gatsby project for unitednepali",
+  "author": "Sonal Ranjit <sonal.ranjit3@gmail.com>",
+  "homepage": "https://github.com/nepalcodes/unitednepali/tree/master/packages/client#readme",
+  "license": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nepalcodes/unitednepali.git"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "serve": "gatsby server",
+    "clean": "gatsby clean"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "bugs": {
+    "url": "https://github.com/nepalcodes/unitednepali/issues"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@reach/router": "^1.3.3",
+    "@testing-library/jest-dom": "^5.10.1",
+    "gatsby": "^2.23.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-spring": "^8.0.27",
+    "use-async-effect": "^2.2.2"
   }
 }
