@@ -27,12 +27,13 @@ UI runs on http://localhost:8080 and server runs on http://localhost:3000
 
 # Docker Workflow
 
-The project is also configured for a containerized workflow, currently there are 4 services:
+The project is also configured for a containerized workflow, currently there are 5 services:
 
 * `unitednepali-server` (express server): this is the backend service for the web application
 * `unitednepali-client` (react frontend): this is the react frontend, managed by gatsby
 * `unitednepali-db` (postgres db): postgres database 
 * `unitednepali-nginx` (nginx): nginx webserver, which can also be used as a reverse proxy
+* `unitednepali-hasura` (hasura): graphql engine, runs on localhost:8888
 
 Each service is built and deployed through Docker, see corresponding service's `Dockerfile` for details.
 We use `docker-compose` to orchestrate all the services together. See Docker [site](https://docs.docker.com/compose/install/) for OS specific installation instructions.
@@ -99,6 +100,7 @@ npm run lint-report
 * [Cypress](https://www.cypress.io/) for end to end testing our application.
 * [Docker](https://www.docker.com/) encompass the project in containers.
 * [Postgres](https://www.postgresql.org/) as our sql database.
+* [Hasura](https://hasura.io) GraphQL engine to interface with our Postgres db.
 
 **Project Structure**
 ```bash
